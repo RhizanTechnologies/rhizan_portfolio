@@ -9,7 +9,7 @@ export const site = {
   email: 'contact@rhizantech.com',
   logoUrl: '/logo.svg',
   logoMinimalUrl: '/logo_minimal.png',
-  phone: '0977236887',
+  phone: '0908024092',
   address: 'Addis Ababa, Ethiopia',
   heroImageUrl: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80',
   socials: [
