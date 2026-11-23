@@ -6,7 +6,21 @@ import nodemailer from 'nodemailer';
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-app.use(cors({ origin: process.env.CORS_ORIGIN || 'http://localhost:5173' }));
+const allowedOrigins = (process.env.CORS_ORIGIN || 'http://localhost:5173,http://localhost:8080')
+  .split(',')
+  .map((o) => o.trim());
+
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins.includes('*') || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error(`Origin ${origin} not allowed by CORS`));
+      }
+    },
+  })
+);
 app.use(express.json());
 
 const transporter = nodemailer.createTransport({
@@ -67,3 +81,5 @@ app.get('/api/health', (_req, res) => {
 app.listen(PORT, () => {
   console.log(`Contact server running on http://localhost:${PORT}`);
 });
+
+export default app;

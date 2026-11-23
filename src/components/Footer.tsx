@@ -25,7 +25,6 @@ const socialIcons: Record<string, React.ComponentType<{ className?: string }>> =
 const companyLinks = [
   { label: 'Work', href: '#work' },
   { label: 'About', href: '#about' },
-  { label: 'Team', href: '#team' },
   { label: 'Contact', href: '#contact' },
 ];
 

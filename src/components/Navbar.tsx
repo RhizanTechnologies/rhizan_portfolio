@@ -6,7 +6,6 @@ import { site } from '@/data/site';
 const navLinks = [
   { href: '#work', label: 'Work' },
   { href: '#about', label: 'About' },
-  { href: '#team', label: 'Team' },
   { href: '#process', label: 'Process' },
   { href: '#contact', label: 'Contact' },
 ];
